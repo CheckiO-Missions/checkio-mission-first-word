@@ -35,38 +35,14 @@ text = text.replace('.', ' ').replace(',', ' ')</pre>
         then we use the code above and get:<br>
         "   hello dude   "<br>
     </div>
-</div>    
-    
-<div class="question-answer">
-    <div class="question">
-        I need some help to proceed with the mission.
-    </div>
-    <div class="answer">
-        Now you can use
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip'>str.strip()</a>
-        method to delete all of the white spaces from the beginning and end of the string.
-    </div>
 </div>
-
-<div class="question-answer">
-    <div class="question">
-        Nothing works... Help!
-    </div>
-    <div class="answer">
-        Your code should look like this:
-        <pre class="brush: python">
-text = text.replace('.', ' ').replace(',', ' ').strip()</pre>
-        And this stuff converts our input ".,.hello dude.,." into "hello dude". You are close!
-    </div>
-</div>
-    
 <div class="question-answer">
     <div class="question">
         Emmm... What's next?
     </div>
     <div class="answer">        
         When you have a pure string only with words and white spaces between them, you can
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>split</a> it.
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a> it.
     </div>
 </div>
     
@@ -77,7 +53,7 @@ text = text.replace('.', ' ').replace(',', ' ').strip()</pre>
     <div class="answer">
         Just type:
         <pre class="brush: python">
-text = text.replace('.', ' ').replace(',', ' ').strip()
+text = text.replace('.', ' ').replace(',', ' ')
 text = text.split()</pre>
         And you will get a list of words - ["hello", "dude"]
     </div>
@@ -101,7 +77,7 @@ text = text.split()</pre>
         Full code is:
         <pre class="brush: python">
 def first_word(text):
-    text = text.replace('.', ' ').replace(',', ' ').strip()
+    text = text.replace('.', ' ').replace(',', ' ')
     text = text.split()
     return text[0]</pre>
     </div>
