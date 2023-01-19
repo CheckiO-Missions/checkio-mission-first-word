@@ -1,87 +1,110 @@
-
-
 <body data-author="Doppelok">
-
 <div class="question-answer">
     <div class="question">
-        Я не знаю, як розпочати вирішення цієї місії.
+        <p>
+            Я не знаю, як розпочати вирішення цієї місії.
+        </p>
     </div>
     <div class="answer">
-        Ти можеш почати з видалення всіх крапок і ком, потім ти зможеш отримати список усіх слів і знайти серед них перше.
-    </div>
-</div>
-
-<div class="question-answer">
-    <div class="question">
-        Не міг би ти розбити це пояснення на менші кроки?
-    </div>
-    <div class="answer">
-        Перш за все, ти можеш використовувати
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a>
-        метод для заміни крапок і ком пробілами.
-    </div>
-</div>
-
-<div class="question-answer">
-    <div class="question">
-        Чи можеш ти показати мені, як ним користуватися?
-    </div>
-    <div class="answer">
-        "replace" працює так:
-        <pre class="brush: python">
-text = text.replace('.', ' ').replace(',', ' ')</pre>
-        Наприклад:<br>
-        text = ".,.hello dude.,."<br>
-        потім ми використовуємо наведений вище код і отримуємо:<br>
-        "   hello dude   "<br>
+        <p>
+            Ти можеш почати з видалення всіх крапок і ком, потім ти зможеш отримати список усіх слів і знайти серед них перше.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Що далі робити?...
+        <p>
+            Не міг би ти розбити це пояснення на менші кроки?
+        </p>
     </div>
     <div class="answer">
-        Коли у тебе є чистий рядок лише зі словами та пробілами між ними, використай цей метод
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a>.
+        <p>
+            Перш за все, ти можеш використовувати <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a> метод для заміни крапок і ком пробілами.
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        Я на півдорозі. Потрібна допомога!
+        <p>
+            Чи можеш ти показати мені, як ним користуватися?
+        </p>
     </div>
     <div class="answer">
-        Просто введи:
+        <p>
+            "replace" працює так:
+        </p>
         <pre class="brush: python">
 text = text.replace('.', ' ').replace(',', ' ')
-text = text.split()</pre>
-        І ти отримаєш список слів - ["hello", "dude"]
+        </pre>
+        <p>
+            Наприклад:<br>
+            text = ".,.hello dude.,."<br>
+            потім ми використовуємо наведений вище код і отримуємо:<br>
+            "   hello dude   "<br>
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        Мені потрібна маленька підказка.
+        <p>
+            Що далі робити?...
+        </p>
     </div>
     <div class="answer">
-        Останнє, що ти повинен зробити, це знайти перший
-         <a href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>елемент списку</a>.
+        <p>
+            Коли у тебе є чистий рядок лише зі словами та пробілами між ними, використай цей метод <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a>.
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        І остаточна відповідь...
+        <p>
+            Я на півдорозі. Потрібна допомога!
+        </p>
     </div>
     <div class="answer">
-        Повний код:
+        <p>
+            Просто введи:
+        </p>
         <pre class="brush: python">
-def first_word(text):
+text = text.replace('.', ' ').replace(',', ' ')
+text = text.split()
+        </pre>
+        <p>
+            І ти отримаєш список слів - <b class="code">["hello", "dude"]</b>. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Мені потрібна маленька підказка.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Останнє, що ти повинен зробити, це знайти перший <a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>елемент списку</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            І остаточна відповідь...
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Повний код:
+        </p>
+        <pre class="brush: python">
+def first_word(text: str) -> str:
+
     text = text.replace('.', ' ').replace(',', ' ')
     text = text.split()
+    
     return text[0]</pre>
     </div>
 </div>
-
-
 </body>

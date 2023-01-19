@@ -38,7 +38,7 @@ TESTS = {
             "input": ["hi"],
             "answer": "hi",
             "explanation": "text consists of only one word"
-        }
+        },
     ],
     "Extra": [
         {
@@ -52,6 +52,6 @@ TESTS = {
         {
             "input": ["Hello.World"],
             "answer": "Hello"
-        }
+        },
     ]
 }

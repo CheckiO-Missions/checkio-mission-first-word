@@ -1,87 +1,112 @@
 
 
 <body data-author="likewind">
-    
 <div class="question-answer">
     <div class="question">
-        I have no idea how to start solving this mission.
+        <p>
+            I have no idea how to start solving this mission.
+        </p>
     </div>
     <div class="answer">
-        You can start by deleting all of the dots and commas, then you can get a list of all of the words and find the first one among them.
+        <p>
+            You can start by deleting all of the dots and commas, then you can get a list of all of the words and find the first one among them.
+        </p>
     </div>
 </div>    
-    
 <div class="question-answer">
     <div class="question">
-        Could you break this explanation into smaller steps?
+        <p>
+            Could you break this explanation into smaller steps?
+        </p>
     </div>
     <div class="answer">
-        First of all, you can use 
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a>
-        method to replace dots and commas with white spaces.
+        <p>
+            First of all, you can use <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a> method to replace dots and commas with white spaces.
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        Can you show me how to use it?
+        <p>
+            Can you show me how to use it?
+        </p>
     </div>
     <div class="answer">
-        "replace" is work like that:
+        <p>
+            "replace" works like that:
+        </p>
         <pre class="brush: python">
-text = text.replace('.', ' ').replace(',', ' ')</pre>
+text = text.replace('.', ' ').replace(',', ' ')
+        </pre>
+        <p>
         For example:<br>
         text = ".,.hello dude.,."<br>
         then we use the code above and get:<br>
         "   hello dude   "<br>
+        </p>
     </div>
 </div>
 <div class="question-answer">
-    <div class="question">
+    <p>
         Emmm... What's next?
-    </div>
-    <div class="answer">        
-        When you have a pure string only with words and white spaces between them, you can
-        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a> it.
-    </div>
-</div>
-    
-<div class="question-answer">
+    </p>
     <div class="question">
-        I'm halfway through. Need help!
     </div>
     <div class="answer">
-        Just type:
+        <p>
+            When you have a pure string only with words and white spaces between them, you can <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a> it.
+        </p>    
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            I'm halfway through. Need help!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Just type:
+        </p>
         <pre class="brush: python">
 text = text.replace('.', ' ').replace(',', ' ')
-text = text.split()</pre>
-        And you will get a list of words - ["hello", "dude"]
+text = text.split()
+        </pre>
+        <p>
+            And you will get a list of words - <b class="code">["hello", "dude"]</b>.
+        </p>
     </div>
 </div>
-    
 <div class="question-answer">
     <div class="question">
-        I am stuck. I need a small hint.
+        <p>
+            I am stuck. I need a small hint.
+        </p>
     </div>
     <div class="answer">
-        The last thing you that should do is to find the
-        first <a href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a>.
+        <p>
+            The last thing you should do is to find the first <a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a>.
+        </p>
     </div>
 </div>
-
 <div class="question-answer">
     <div class="question">
-        And the final answer is...
+        <p>
+            And the final answer is...
+        </p>
     </div>
     <div class="answer">
-        Full code is:
+        <p>
+            Full code is:
+        </p>
         <pre class="brush: python">
-def first_word(text):
+def first_word(text: str) -> str:
+
     text = text.replace('.', ' ').replace(',', ' ')
     text = text.split()
+
     return text[0]</pre>
     </div>
 </div>
-    
-    
 </body>
