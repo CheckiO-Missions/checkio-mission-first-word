@@ -91,12 +91,14 @@ text.replace(/\.|,/g, " ").trim().split(" ")[0]
             Тобі просто потрібно обгорнути свій код у вираз функції і повернути весь вираз вище, оскільки ти не оголошував жодних змінних.
         </p>
         <p>Ось повний розв'язок:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function firstWord(text: string): string {
 
     return text.replace(/\.|,/g, " ").trim().split(" ")[0]
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -109,9 +111,11 @@ function firstWord(text: string): string {
         <p>
             У цьому рішенні використовується анонімна функція і шукається перша (без глобального модифікатора), нечутлива до регістру (<b class="code">i</b> модифікатор) послідовність літер.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
         </pre>
+        </div>
         <p><b>Тисни "Best solutions" в меню місії та побачиш багато інших цікавих рішень!</b></p>
     </div>
 </div>
