@@ -1,0 +1,126 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>I have no idea how to start solving this mission.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 The idea includes the following steps: to replace all dots and commas with empty space, trim all beginning and end whitespace, split the text by remaining whitespace (between words) and take the first word (don't forget about 0-indexing in JS).
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, what should I start from?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Read about <a target="_blank" href="https://www.w3schools.com/jsref/jsref_replace.asp">replace()</a> method. Use it to replace all dots and commas (next hint) with an empty space. 
+        </p>
+        <pre class="brush: javascript">
+text.replace(..., " ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            So, how to find all dots and commas in text to replace them?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            You need a <a target="_blank" href="https://www.w3schools.com/js/js_regexp.asp">regular expression</a> to do so. Build the following regular expression (<b class="code">/.../</b>): dot sign with escape character <b class="code">\.</b> (since dot means any single character in regex you need to escape it to look for dot as character itself) or <b class="code">|</b> comma sign <b class="code">,</b>. Your regular expression should have global modifier <b class="code">/.../g</b> to find all dots and commas in the text.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ")
+        </pre>  
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok, what to do next?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> method to remove all whitespace form the beginning and end of the text after replacing.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            How to split the text to the separate words?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> method with whitespace <b class="code">" "</b> argument after trimming.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            What I get for now and how to take the first word?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            After splitting you get an array of separate words. So, to get the first one (it has index <b class="code">0</b>) you need to use indexing after all previous steps.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")[0]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>So, how my final solution should look like?</p>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to wrap your code into function expression and return the whole expression above, since you don't declare any variables.
+        </p>
+        <p>Here is the whole solution:</p>
+        <pre class="brush: javascript">
+function firstWord(text: string): string {
+
+    return text.replace(/\.|,/g, " ").trim().split(" ")[0]
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!</p>
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            In this solution anonymous function is used and finding the first (no global modifier)  case insensitive (<b class="code">i</b> modifier) sequence of letters.
+        </p>
+        <pre class="brush: javascript">
+var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
+        </pre>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Thanks! I know and understand more now! Everything works fine!</p>
+    </div>
+    <div class="answer">
+        👍 Glad to hear it!
+    </div>
+</div>
+</body>
