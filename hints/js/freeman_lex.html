@@ -91,12 +91,14 @@ text.replace(/\.|,/g, " ").trim().split(" ")[0]
             You just need to wrap your code into function expression and return the whole expression above, since you don't declare any variables.
         </p>
         <p>Here is the whole solution:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function firstWord(text: string): string {
 
     return text.replace(/\.|,/g, " ").trim().split(" ")[0]
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -109,9 +111,11 @@ function firstWord(text: string): string {
         <p>
             In this solution anonymous function is used and finding the first (no global modifier)  case insensitive (<b class="code">i</b> modifier) sequence of letters.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
         </pre>
+        </div>
         <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
     </div>
 </div>
