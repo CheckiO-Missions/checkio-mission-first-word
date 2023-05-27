@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Je n'ai aucune idée de la manière de commencer à résoudre cette mission.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 L'idée comprend les étapes suivantes: remplacer tous les points et virgules par des espaces vides, couper tous les espaces blancs de début et de fin, diviser le texte par les espaces blancs restants (entre les mots) et prendre le premier mot (n'oubliez pas l'indexation 0 dans JS).
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, par quoi dois-je commencer?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Lisez la méthode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_replace.asp">replace()</a>. Utilisez-la pour remplacer tous les points et les virgules (prochain conseil) par un espace vide. 
+        </p>
+        <pre class="brush: javascript">
+text.replace(..., " ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Alors, comment trouver tous les points et virgules dans un texte pour les remplacer?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Vous avez besoin d'une <a target="_blank" href="https://www.w3schools.com/js/js_regexp.asp">regular expression</a> pour le faire. Construisez l'expression régulière suivante<b class="code">(/.../</b>): le signe point avec le caractère d'échappement <b class="code">\</b> (puisque le point signifie n'importe quel caractère unique dans la regex, vous devez l'échapper pour rechercher le point en tant que caractère lui-même) ou <b class="code">|</b> le signe virgule <b class="code">,</b>. Votre expression régulière doit comporter le modificateur global <b class="code">/.../g</b> pour trouver tous les points et toutes les virgules dans le texte.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ")
+        </pre>  
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok, que faire ensuite?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez la méthode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> pour supprimer tous les espaces au début et à la fin du texte après le remplacement.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Comment diviser le texte en mots distincts?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez la méthode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> avec l'argument de l'espace blanc <b class="code">" "</b> après le découpage.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Qu'est-ce que j'obtiens pour l'instant et comment prendre le premier mot?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Après la division, vous obtenez un tableau de mots distincts. Ainsi, pour obtenir le premier mot (il a l'index <b class="code">0</b>), vous devez utiliser l'indexation après toutes les étapes précédentes.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")[0]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Alors, à quoi devrait ressembler ma solution finale?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de transformer votre code en une expression de fonction et de renvoyer l'expression complète ci-dessus, puisque vous ne déclarez aucune variable.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function firstWord(text: string): string {
+
+    return text.replace(/\.|,/g, " ").trim().split(" ")[0]
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Montrez-moi d'autres solutions!<br />
+        parce que je veux être un vrai 🥇 Javascript Hero!</p>
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Dans cette solution, la fonction anonyme est utilisée pour trouver la première (pas de modificateur global) séquence de lettres insensible à la casse<b class="code">(</b> modificateur<b class="code">i</b> ).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
+        </pre>
+        </div>
+        <p><b>Cliquez sur "Best solutions" dans le menu de la mission et voyez beaucoup d'autres solutions intéressantes!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!</p>
+    </div>
+    <div class="answer">
+        👍 Heureux de l'apprendre!
+    </div>
+</div>
+</body>
