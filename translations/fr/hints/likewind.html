@@ -1,0 +1,115 @@
+
+
+<body data-author="likewind">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Vous pouvez commencer par supprimer tous les points et toutes les virgules, puis vous pouvez obtenir une liste de tous les mots et trouver le premier d'entre eux.
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Pourriez-vous diviser cette explication en plusieurs étapes?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Tout d'abord, vous pouvez utiliser la méthode <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a> pour remplacer les points et les virgules par des espaces blancs.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Pouvez-vous me montrer comment l'utiliser?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            la fonction "replace" fonctionne de la même manière:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+        </pre>
+        <p>
+        Par exemple:<br>
+        text = ".,.hello dude.,."<br>
+        puis nous utilisons le code ci-dessus et obtenons:<br>
+        " hello dude "<br>
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <p>
+        Emmm... Qu'est-ce qu'on fait ensuite?
+    </p>
+    <div class="question">
+    </div>
+    <div class="answer">
+        <p>
+            Lorsque vous avez une chaîne de caractères pure, composée uniquement de mots et d'espaces blancs entre eux, vous pouvez l'envoyer à <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a>.
+        </p>    
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            J'en suis à la moitié. J'ai besoin d'aide!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Tapez simplement:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+text = text.split()
+        </pre>
+        <p>
+            Et vous obtiendrez une liste de mots - <b class="code">["hello", "dude"].</b>
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je suis bloqué. J'ai besoin d'un petit conseil.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            La dernière chose à faire est de trouver le premier <a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Et la réponse finale est...
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Le code complet est:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def first_word(text: str) -> str:
+
+    text = text.replace('.', ' ').replace(',', ' ')
+    text = text.split()
+
+    return text[0]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
