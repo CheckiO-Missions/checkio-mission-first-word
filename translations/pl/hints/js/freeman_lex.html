@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Nie mam pojęcia, jak zacząć rozwiązywać tę misję.</p>
+    </div>
+    <div class="answer">
+        <p>
+            pomysł obejmuje następujące kroki: zastąpienie wszystkich kropek i przecinków pustą spacją, obcięcie wszystkich początkowych i końcowych białych znaków, podzielenie tekstu pozostałymi białymi znakami (między słowami) i pobranie pierwszego słowa (proszę nie zapomnieć o indeksowaniu 0 w JS).
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, od czego powinienem zacząć?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę przeczytać o metodzie <a target="_blank" href="https://www.w3schools.com/jsref/jsref_replace.asp">replace()</a>. Proszę jej użyć, aby zastąpić wszystkie kropki i przecinki (następna wskazówka) pustą spacją. 
+        </p>
+        <pre class="brush: javascript">
+text.replace(..., " ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak znaleźć wszystkie kropki i przecinki w tekście, aby je zastąpić?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Potrzebują Państwo do tego celu <a target="_blank" href="https://www.w3schools.com/js/js_regexp.asp">regular expression</a>. Proszę utworzyć następujące wyrażenie regularne (<b class="code">/.../</b>): znak kropki ze znakiem ucieczki <b class="code">\.</b> (ponieważ kropka oznacza dowolny pojedynczy znak w wyrażeniu regularnym, należy go uciec, aby wyszukać kropkę jako sam znak) lub <b class="code">|</b> znak przecinka <b class="code">,</b>. Państwa wyrażenie regularne powinno mieć globalny modyfikator <b class="code">/.../g</b>, aby znaleźć wszystkie kropki i przecinki w tekście.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ")
+        </pre>  
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok, co robić dalej?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę użyć metody <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a>, aby usunąć wszystkie białe znaki z początku i końca tekstu po zamianie.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak podzielić tekst na osobne słowa?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę użyć metody <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> z argumentem whitespace <b class="code">" "</b> po przycięciu.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Co teraz otrzymam i jak pobrać pierwsze słowo?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Po podziale otrzymuje Pan tablicę oddzielnych słów. Tak więc, aby uzyskać pierwsze z nich (ma indeks <b class="code">0</b>) należy użyć indeksowania po wszystkich poprzednich krokach.
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")[0]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Jak więc powinno wyglądać moje ostateczne rozwiązanie?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy zawinąć kod w wyrażenie funkcyjne i zwrócić całe powyższe wyrażenie, ponieważ nie zadeklarował Pan żadnych zmiennych.
+        </p>
+        <p>Oto całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function firstWord(text: string): string {
+
+    return text.replace(/\.|,/g, " ").trim().split(" ")[0]
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwym 🥇 bohaterem Javascriptu!</p>
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę pobrać!</p>
+        <p>
+            W tym rozwiązaniu używana jest funkcja anonimowa, która znajduje pierwszą (bez globalnego modyfikatora) niewrażliwą na wielkość liter (modyfikator<b class="code">i</b> ) sekwencję liter.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
+        </pre>
+        </div>
+        <p>Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!</p>
+    </div>
+    <div class="answer">
+        miło mi to słyszeć!
+    </div>
+</div>
+</body>
