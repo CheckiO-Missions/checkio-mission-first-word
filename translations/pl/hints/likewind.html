@@ -1,0 +1,115 @@
+
+
+<body data-author="likewind">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Może Pan zacząć od usunięcia wszystkich kropek i przecinków, a następnie uzyskać listę wszystkich słów i znaleźć pierwsze z nich.
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Czy mógłby Pan podzielić to wyjaśnienie na mniejsze kroki?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Po pierwsze, może Pan użyć metody <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a>, aby zastąpić kropki i przecinki białymi spacjami.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Czy może mi Pan pokazać, jak jej używać?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            "replace" działa w ten sposób:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+        </pre>
+        <p>
+        Na przykład:<br>
+        text = ".,.hello dude.,."<br>
+        następnie używamy powyższego kodu i otrzymujemy:<br>
+        " hello dude "<br>
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <p>
+        Emmm... Co dalej?
+    </p>
+    <div class="question">
+    </div>
+    <div class="answer">
+        <p>
+            Kiedy ma Pan czysty ciąg znaków, tylko ze słowami i białymi spacjami między nimi, może Pan go <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a>.
+        </p>    
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jestem w połowie. Proszę o pomoc!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę wpisać:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+text = text.split()
+        </pre>
+        <p>
+            A otrzymają Państwo listę słów - <b class="code">["hello", "dude"]</b>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Utknąłem. Potrzebuję małej podpowiedzi.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ostatnią rzeczą, jaką powinien Pan zrobić, jest znalezienie pierwszego <a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            A ostateczną odpowiedzią jest...
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Pełny kod to:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def first_word(text: str) -> str:
+
+    text = text.replace('.', ' ').replace(',', ' ')
+    text = text.split()
+
+    return text[0]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
