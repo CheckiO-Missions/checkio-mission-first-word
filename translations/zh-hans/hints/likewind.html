@@ -1,0 +1,115 @@
+
+
+<body data-author="likewind">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            你可以从删除所有的点和逗号开始，然后你可以得到一个所有单词的列表，在其中找到第一个单词。
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            你能把这个解释分成小的步骤吗？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            首先，你可以使用<a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a> 方法将点和逗号替换成空白。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            你能告诉我如何使用它吗？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            "替换 "是这样的：
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+        </pre>
+        <p>
+        比如说<br>
+        text = "...，.hello dude...，."<br>
+        然后我们使用上面的代码，得到：<br>
+        " hello dude "<br>
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <p>
+        嗯...接下来是什么？
+    </p>
+    <div class="question">
+    </div>
+    <div class="answer">
+        <p>
+            当你有一个纯字符串，只有单词和它们之间的空白，你可以<a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a> 。
+        </p>    
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我已经完成了一半。需要帮助!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            只要输入
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+text = text.split()
+        </pre>
+        <p>
+            你就会得到一个单词列表 -<b class="code">["hello", "dude"]</b> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我被卡住了。我需要一个小提示。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            你应该做的最后一件事是找到第一个<a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            而最后的答案是...
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            完整的代码是：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def first_word(text: str) -> str:
+
+    text = text.replace('.', ' ').replace(',', ' ')
+    text = text.split()
+
+    return text[0]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
