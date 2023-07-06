@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>我不知道如何开始解决这个任务。</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 这个想法包括以下步骤：将所有的点和逗号换成空位，修剪所有的开头和结尾的空白处，用剩余的空白处（字与字之间）分割文本，取第一个字（别忘了JS中的0索引）。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>好吧，我应该从什么开始呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            阅读关于<a target="_blank" href="https://www.w3schools.com/jsref/jsref_replace.asp">replace()</a> 方法。用它来替换所有的点和逗号（下一个提示），用一个空的空间。 
+        </p>
+        <pre class="brush: javascript">
+text.replace(..., " ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            那么，如何找到文本中的所有点和逗号来替换它们？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            你需要一个<a target="_blank" href="https://www.w3schools.com/js/js_regexp.asp">regular expression</a> 来做到这一点。建立以下正则表达式(<b class="code">/.../</b>)：带转义字符的点号<b class="code">\.</b> ( 因为点号在正则表达式中意味着任何单个字符，你需要转义它来寻找点号本身)或<b class="code">|</b> 逗号<b class="code">,</b> 。你的正则表达式应该有全局修饰符<b class="code">/.../g</b> ，以查找文本中的所有点和逗号。
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ")
+        </pre>  
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            好了，接下来该怎么做？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> 方法，在替换后去除文本开头和结尾的所有空白处。
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            如何将文本分割成不同的字？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> 方法，在修剪后使用空白<b class="code">" "</b> 参数。
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我现在得到的是什么，如何取第一个字？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            分割后，你得到一个独立的单词数组。因此，为了得到第一个词（它的索引是<b class="code">0</b> ），你需要在之前的所有步骤之后使用索引。
+        </p>
+        <pre class="brush: javascript">
+text.replace(/\.|,/g, " ").trim().split(" ")[0]
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>那么，我的最终解决方案应该是什么样子的呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            你只需要把你的代码包装成函数表达式，并返回上面的整个表达式，因为你没有声明任何变量。
+        </p>
+        <p>下面是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function firstWord(text: string): string {
+
+    return text.replace(/\.|,/g, " ").trim().split(" ")[0]
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>告诉我更多的解决方案!<br />
+        因为我想成为一个真正的🥇 Javascript英雄!</p>
+    </div>
+    <div class="answer">
+        <p>当然，抓住它!</p>
+        <p>
+            在这个解决方案中，使用了匿名函数，并找到了第一个（没有全局修改器）不区分大小写的（<b class="code">i</b> 修改器）字母序列。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var firstWord = (text: string): string => text.match(/[a-z']+/i)[0];
+        </pre>
+        </div>
+        <p>点击任务菜单上的<b>Best Solutions</b> ，可以看到很多其他有趣的解决方案!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>谢谢!我现在知道并理解了更多!一切工作都很顺利!</p>
+    </div>
+    <div class="answer">
+        👍很高兴听到这个消息!
+    </div>
+</div>
+</body>
