@@ -1,0 +1,49 @@
+<!-- Describe task in general -->
+<img src="{{MEDIA_CONVERT}}title.png" class="title_img" />
+<p><i>Vielleicht gibt es bereits eine vereinfachte Version dieser Mission <a href="/mission/first-word-simplified/">First Word (simplified)</a>. Diese Aufgabe ist etwas komplexer, da nicht nur englische Buchstaben in der vorgegebenen Zeichenkette vorkommen können.</i></p>
+
+<p>
+    Sie erhalten eine Zeichenfolge, deren erstes Wort Sie finden müssen.
+</p>
+
+<p>
+    Achten Sie beim Lösen der Aufgabe auf die folgenden Punkte:
+</p>
+<ul>
+    <li>Eine Zeichenfolge kann Punkte und Kommas enthalten.</li>
+    <li>Eine Zeichenkette kann mit einem Buchstaben oder z.B. mit einem/mehreren Punkt(en) oder Leerzeichen beginnen.</li>
+    <li>Ein Wort kann ein Apostroph enthalten und ist ein Teil eines Wortes.</li>
+    <li>Der gesamte Text kann mit einem Wort dargestellt werden und das war's.</li>
+</ul>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Eine Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Eine Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Wie es verwendet wird:</strong>
+    <i>das erste Wort ist ein Befehl in einer Befehlszeile</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingung:</strong>
+    <i>der Text kann a-z A-Z , . ' enthalten </i>
+</p>
