@@ -1,0 +1,115 @@
+
+
+<body data-author="likewind">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie können damit beginnen, alle Punkte und Kommas zu löschen. Dann erhalten Sie eine Liste aller Wörter und finden das erste Wort unter ihnen.
+        </p>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Könnten Sie diese Erklärung in kleinere Schritte unterteilen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Zunächst einmal können Sie die Methode <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=replace#str.replace'>str.replace()</a> verwenden, um Punkte und Kommas durch Leerzeichen zu ersetzen.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Können Sie mir zeigen, wie man das macht?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            "Ersetzen" funktioniert so:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+        </pre>
+        <p>
+        Zum Beispiel:<br>
+        text = ".,.hallo dude.,."<br>
+        dann verwenden wir den obigen Code und erhalten:<br>
+        " hallo Kumpel "<br>
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <p>
+        Hmmm... Was kommt als Nächstes?
+    </p>
+    <div class="question">
+    </div>
+    <div class="answer">
+        <p>
+            Wenn Sie eine reine Zeichenkette nur mit Wörtern und Leerzeichen dazwischen haben, können Sie sie <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=split#str.split'>.split()</a>.
+        </p>    
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich bin schon halb durch. Ich brauche Hilfe!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Geben Sie einfach ein:
+        </p>
+        <pre class="brush: python">
+text = text.replace('.', ' ').replace(',', ' ')
+text = text.split()
+        </pre>
+        <p>
+            Und Sie erhalten eine Liste von Wörtern - <b class="code">["hello", "dude"]</b>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich hänge fest. Ich brauche einen kleinen Hinweis.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Das letzte, was Sie tun sollten, ist, die erste <a target="_blank"
+            href='https://docs.python.org/3/library/stdtypes.html?highlight=list%20element'>element of the list</a> zu finden.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Und die endgültige Antwort lautet...
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Der vollständige Code lautet:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def first_word(text: str) -> str:
+
+    text = text.replace('.', ' ').replace(',', ' ')
+    text = text.split()
+
+    return text[0]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
